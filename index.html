@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google" content="notranslate">
-<meta http-equiv="content-language" content="pl">
 
 <title>ASPRO Projekty i Nadzory Drogowe – Adrian Stokowski</title>
-<meta name="description" content="ASPRO Projekty i Nadzory Drogowe – projekty drogowe i nadzory.">
+<meta name="description" content="ASPRO Projekty i Nadzory Drogowe – projekty drogowe i nadzory inwestorskie.">
+<meta name="google" content="notranslate">
+<meta http-equiv="content-language" content="pl">
 
 <link rel="icon" href="favicon.ico">
 
@@ -18,8 +18,6 @@
 <style>
 :root{
   --bg:#0b1222;
-  --panel:rgba(255,255,255,.05);
-  --panel2:rgba(255,255,255,.04);
   --line:rgba(255,255,255,.12);
   --text:rgba(255,255,255,.92);
   --muted:rgba(255,255,255,.65);
@@ -43,7 +41,7 @@ body{
   padding:28px 18px;
 }
 
-.shell{
+.card{
   width:100%;
   max-width:1100px;
   background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
@@ -54,8 +52,8 @@ body{
   position:relative;
 }
 
-/* ===== HEADER (jak “stare” – niski, elegancki) ===== */
-.header{
+/* ===== HEADER ===== */
+header{
   padding:22px 32px;
   border-bottom:1px solid var(--line);
   background:
@@ -63,54 +61,48 @@ body{
     linear-gradient(225deg,rgba(17,26,47,.9),transparent 60%);
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-/* Logo jako JEDEN obrazek (bez dublowania tekstu) */
-.brand img{
-  height:92px;     /* <- tu sterujesz wielkością logo */
+.logo img{
+  height:118px;   /* ⬅️ większe logo (jak żółta ramka) */
   width:auto;
   display:block;
 }
 
-/* ===== MAIN ===== */
-.main{
+/* ===== CONTENT ===== */
+main{
   display:grid;
   grid-template-columns:1.15fr .85fr;
   gap:22px;
-  padding:26px 28px 58px; /* zostawiamy miejsce na małą stopkę */
+  padding:26px 28px 70px; /* ⬅️ miejsce na stopkę, żeby nie robiła dużego pasa */
 }
 
-@media (max-width:900px){
-  .header{padding:18px 18px;}
-  .main{grid-template-columns:1fr; padding:22px 18px 54px;}
-  .brand img{height:78px;}
+@media(max-width:900px){
+  main{grid-template-columns:1fr; padding:22px 18px 60px;}
+  header{padding:18px 18px;}
+  .logo img{height:88px;}
 }
 
+/* ===== PANELS ===== */
 .panel{
-  background:var(--panel);
+  background:rgba(255,255,255,.05);
   border:1px solid var(--line);
   border-radius:18px;
   padding:22px;
 }
 
 .panel h2{
-  margin:0 0 14px;
+  margin:0 0 16px;
   font-size:18px;
-  letter-spacing:.01em;
 }
 
+/* ===== ABOUT ===== */
 .about{
   font-size:15px;
-  line-height:1.65;
+  line-height:1.6;
   color:var(--muted);
   margin-bottom:22px;
 }
 
-/* ===== SERVICES (prosto: tytuł + opis pod spodem) ===== */
+/* ===== SERVICES ===== */
 .service{
   padding:14px 0;
   border-bottom:1px dashed rgba(255,255,255,.15);
@@ -122,10 +114,9 @@ body{
   font-size:15px;
 }
 .service-desc{
-  margin-top:6px;
   font-size:13px;
   color:var(--muted);
-  line-height:1.5;
+  margin-top:6px;
 }
 
 /* ===== CONTACT ===== */
@@ -137,7 +128,7 @@ body{
   margin-bottom:12px;
   border-radius:16px;
   border:1px solid var(--line);
-  background:var(--panel2);
+  background:rgba(255,255,255,.04);
   cursor:pointer;
 }
 
@@ -161,103 +152,86 @@ body{
   font-weight:700;
 }
 
-/* ===== FOOTER (jak „stare”: małe i bez wielkiego pasa) ===== */
-.footer{
+/* ===== FOOTER (jak na screenie: małe, w prawym dolnym rogu) ===== */
+footer{
   position:absolute;
   right:28px;
-  bottom:16px;
+  bottom:18px;
   font-size:12px;
   color:var(--muted);
   letter-spacing:.02em;
 }
-@media (max-width:900px){
-  .footer{right:18px; bottom:14px;}
+@media(max-width:900px){
+  footer{right:18px; bottom:14px;}
 }
 </style>
 </head>
 
 <body>
-  <div class="shell">
+<div class="card">
 
-    <div class="header">
-      <div class="brand">
-        <img src="ASPRO_logo_transparent_HQ.png" alt="ASPRO Projekty i Nadzory Drogowe Adrian Stokowski">
-      </div>
-    </div>
-
-    <div class="main">
-
-      <section class="panel">
-        <h2>O firmie</h2>
-        <div class="about">
-          Biuro inżynierskie specjalizujące się w projektowaniu oraz nadzorze inwestycji drogowych.
-          Stawiamy na czytelną dokumentację, sprawną współpracę i dopracowane rozwiązania techniczne.
-        </div>
-
-        <h2>Zakres usług</h2>
-
-        <div class="service">
-          <div class="service-title">Projekty drogowe</div>
-          <div class="service-desc">opracowania koncepcyjne i projektowe, dokumentacje techniczne</div>
-        </div>
-
-        <div class="service">
-          <div class="service-title">Nadzory</div>
-          <div class="service-desc">nadzór inwestorski i autorski, wsparcie na etapie realizacji</div>
-        </div>
-      </section>
-
-      <aside class="panel">
-        <h2>Kontakt</h2>
-
-        <div class="contact-item js" data-k="address">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
-          </div>
-          <div>
-            <div class="label">Adres</div>
-            <div class="value" id="address">Kliknij, aby wyświetlić</div>
-          </div>
-        </div>
-
-        <div class="contact-item js" data-k="phone">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
-          </div>
-          <div>
-            <div class="label">Telefon</div>
-            <div class="value" id="phone">Kliknij, aby wyświetlić</div>
-          </div>
-        </div>
-
-        <div class="contact-item js" data-k="email">
-          <div class="icon">
-            <!-- koperta -->
-            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4-8 5-8-5"/></svg>
-          </div>
-          <div>
-            <div class="label">E-mail</div>
-            <div class="value" id="email">Kliknij, aby wyświetlić</div>
-          </div>
-        </div>
-
-        <div class="contact-item js" data-k="nip">
-          <div class="icon">
-            <!-- prostokąt -->
-            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-          </div>
-          <div>
-            <div class="label">NIP</div>
-            <div class="value" id="nip">Kliknij, aby wyświetlić</div>
-          </div>
-        </div>
-      </aside>
-
-    </div>
-
-    <div class="footer">© <span id="y"></span> ASPRO</div>
-
+<header>
+  <div class="logo">
+    <img src="ASPRO_logo_transparent_HQ.png"
+         alt="ASPRO Projekty i Nadzory Drogowe Adrian Stokowski">
   </div>
+</header>
+
+<main>
+
+<section class="panel">
+  <h2>O firmie</h2>
+  <div class="about">
+    Biuro inżynierskie specjalizujące się w projektowaniu oraz nadzorze inwestycji drogowych.
+    Stawiamy na czytelną dokumentację, sprawną współpracę i dopracowane rozwiązania techniczne.
+  </div>
+
+  <h2>Zakres usług</h2>
+
+  <div class="service">
+    <div class="service-title">Projekty drogowe</div>
+    <div class="service-desc">
+      opracowania koncepcyjne i projektowe, dokumentacje techniczne
+    </div>
+  </div>
+
+  <div class="service">
+    <div class="service-title">Nadzory</div>
+    <div class="service-desc">
+      nadzór inwestorski i autorski, wsparcie na etapie realizacji
+    </div>
+  </div>
+</section>
+
+<aside class="panel">
+  <h2>Kontakt</h2>
+
+  <div class="contact-item js" data-k="address">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div>
+    <div><div class="label">Adres</div><div class="value" id="address">Kliknij, aby wyświetlić</div></div>
+  </div>
+
+  <div class="contact-item js" data-k="phone">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg></div>
+    <div><div class="label">Telefon</div><div class="value" id="phone">Kliknij, aby wyświetlić</div></div>
+  </div>
+
+  <div class="contact-item js" data-k="email">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg></div>
+    <div><div class="label">E-mail</div><div class="value" id="email">Kliknij, aby wyświetlić</div></div>
+  </div>
+
+  <div class="contact-item js" data-k="nip">
+    <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+    <div><div class="label">NIP</div><div class="value" id="nip">Kliknij, aby wyświetlić</div></div>
+  </div>
+</aside>
+
+</main>
+
+<footer>© <span id="y"></span> ASPRO</footer>
+
+</div>
 
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
@@ -270,14 +244,15 @@ const d = {
 };
 
 document.querySelectorAll(".js").forEach(e=>{
-  e.addEventListener("click", ()=>{
-    const k = e.dataset.k;
-    const v = document.getElementById(k);
-    if (v.dataset.shown) return;
-    v.textContent = d[k];
-    v.dataset.shown = "1";
-  });
+  e.onclick=()=>{
+    const k=e.dataset.k;
+    const v=document.getElementById(k);
+    if(v.dataset.s) return;
+    v.textContent=d[k];
+    v.dataset.s=1;
+  };
 });
 </script>
+
 </body>
 </html>
