@@ -46,6 +46,9 @@
         linear-gradient(180deg,#050712,var(--bg));
     }
 
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:underline}
+
     .wrap{
       min-height:100%;
       display:flex;
@@ -82,12 +85,14 @@
       background:rgba(255,255,255,.05);
       display:grid;
       place-items:center;
+      overflow:hidden;
     }
     .logo img{
       width:100%;
       height:100%;
       object-fit:contain;
       padding:8px;
+      display:block;
     }
 
     .brandText{
@@ -99,6 +104,7 @@
     .aspro{
       margin:0;
       font-size:46px;
+      line-height:1;
       letter-spacing:.10em;
       font-weight:300;
       text-transform:uppercase;
@@ -110,6 +116,7 @@
       letter-spacing:.12em;
       font-weight:600;
       text-transform:uppercase;
+      color:rgba(255,255,255,.86);
     }
 
     .owner{
@@ -121,6 +128,13 @@
       color:rgba(255,255,255,.82);
     }
 
+    @media(max-width:860px){
+      .logo{width:64px;height:64px}
+      .aspro{font-size:36px}
+      .tagline{font-size:14px}
+      .owner{font-size:13px}
+    }
+
     .content{
       display:grid;
       grid-template-columns:1.15fr .85fr;
@@ -130,7 +144,6 @@
 
     @media(max-width:860px){
       .content{grid-template-columns:1fr}
-      .aspro{font-size:36px}
     }
 
     .panel{
@@ -141,31 +154,50 @@
     }
 
     .panel h2{
-      margin:0 0 14px;
+      margin:0 0 10px;
       font-size:16px;
       font-weight:700;
     }
 
-    .service{
-      padding:12px 0;
-      border-bottom:1px dashed rgba(255,255,255,.12);
-    }
-    .service:last-child{border-bottom:none}
-
-    .service-title{
-      font-weight:700;
+    .lead{
+      margin:0 0 14px;
+      color:var(--muted);
       font-size:15px;
     }
 
-    .service-desc{
-      font-size:13px;
-      color:var(--muted2);
-      margin-top:4px;
+    .bullets{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:10px;
     }
+
+    .bullet{
+      display:flex;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      margin-top:6px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(0,40,184,.16);
+    }
+
+    .bullet b{font-size:14px;font-weight:700}
+    .bullet span{font-size:13px;color:var(--muted2)}
 
     .info{
       display:grid;
       gap:10px;
+      margin-top:12px;
     }
 
     .row{
@@ -176,7 +208,10 @@
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.04);
       cursor:pointer;
+      user-select:none;
     }
+
+    .row:hover{background:rgba(255,255,255,.06)}
 
     .ico{
       width:34px;
@@ -190,8 +225,8 @@
 
     .k{
       font-size:12px;
-      letter-spacing:.06em;
       text-transform:uppercase;
+      letter-spacing:.06em;
       color:var(--muted2);
       font-weight:600;
     }
@@ -230,56 +265,33 @@
 <section class="content">
 
 <div class="panel">
+  <h2>O firmie</h2>
+  <p class="lead">
+    Biuro inżynierskie specjalizujące się w projektowaniu oraz nadzorze inwestycji drogowych.
+    Stawiamy na czytelną dokumentację, sprawną współpracę i dopracowane rozwiązania techniczne.
+  </p>
+
   <h2>Zakres usług</h2>
-
-  <div class="service">
-    <div class="service-title">Projekty drogowe</div>
-    <div class="service-desc">
-      opracowania koncepcyjne i projektowe, dokumentacje techniczne
-    </div>
-  </div>
-
-  <div class="service">
-    <div class="service-title">Nadzory</div>
-    <div class="service-desc">
-      nadzór inwestorski i autorski, wsparcie na etapie realizacji
-    </div>
-  </div>
+  <ul class="bullets">
+    <li class="bullet">
+      <div class="dot"></div>
+      <div><b>Projekty drogowe</b><span>opracowania koncepcyjne i projektowe, dokumentacje techniczne</span></div>
+    </li>
+    <li class="bullet">
+      <div class="dot"></div>
+      <div><b>Nadzory</b><span>nadzór inwestorski i autorski, wsparcie na etapie realizacji</span></div>
+    </li>
+  </ul>
 </div>
 
 <aside class="panel">
   <h2>Kontakt</h2>
 
   <div class="info">
-
-    <div class="row js-reveal" data-kind="address">
-      <div class="ico">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
-      </div>
-      <div><div class="k">Adres</div><div class="v" id="val-address">Kliknij, aby wyświetlić</div></div>
-    </div>
-
-    <div class="row js-reveal" data-kind="phone">
-      <div class="ico">
-        <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
-      </div>
-      <div><div class="k">Telefon</div><div class="v" id="val-phone">Kliknij, aby wyświetlić</div></div>
-    </div>
-
-    <div class="row js-reveal" data-kind="email">
-      <div class="ico">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4-8 5-8-5"/></svg>
-      </div>
-      <div><div class="k">E-mail</div><div class="v" id="val-email">Kliknij, aby wyświetlić</div></div>
-    </div>
-
-    <div class="row js-reveal" data-kind="nip">
-      <div class="ico">
-        <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-      </div>
-      <div><div class="k">NIP</div><div class="v" id="val-nip">Kliknij, aby wyświetlić</div></div>
-    </div>
-
+    <div class="row js-reveal" data-kind="address"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg></div><div><div class="k">Adres</div><div class="v" id="val-address">Kliknij, aby wyświetlić</div></div></div>
+    <div class="row js-reveal" data-kind="phone"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6v3.5c0 .6-.4 1-1 1C10.1 21 3 13.9 3 5c0-.6.4-1 1-1H7.5v3.5c0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div><div><div class="k">Telefon</div><div class="v" id="val-phone">Kliknij, aby wyświetlić</div></div></div>
+    <div class="row js-reveal" data-kind="email"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg></div><div><div class="k">E-mail</div><div class="v" id="val-email">Kliknij, aby wyświetlić</div></div></div>
+    <div class="row js-reveal" data-kind="nip"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2z"/></svg></div><div><div class="k">NIP</div><div class="v" id="val-nip">Kliknij, aby wyświetlić</div></div></div>
   </div>
 </aside>
 
@@ -292,23 +304,31 @@
 
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
-  const d={
-    address:"ul. Boryszewska 44/19, 09-410 Płock",
-    phonePretty:"880 510 126",
-    phoneTel:"+48880510126",
-    email:"kontakt.aspro@gmail.com",
-    nip:"8341755695"
+
+  const data={
+    address:["ul. ","Boryszewska ","44/19",", ","09-410 ","Płock"].join(""),
+    phonePretty:["880"," ","510"," ","126"].join(""),
+    phoneTel:["+48","880","510","126"].join(""),
+    email:["kontakt",".","aspro","@","gmail",".","com"].join(""),
+    nip:["834","175","5695"].join("")
   };
+
+  function reveal(k){
+    const v=document.getElementById("val-"+k);
+    if(!v||v.dataset.r) return;
+    if(k==="address") v.textContent=data.address;
+    if(k==="phone") v.innerHTML=`<a href="tel:${data.phoneTel}">${data.phonePretty}</a>`;
+    if(k==="email") v.innerHTML=`<a href="mailto:${data.email}">${data.email}</a>`;
+    if(k==="nip") v.textContent=data.nip;
+    v.dataset.r=1;
+  }
+
   document.querySelectorAll(".js-reveal").forEach(r=>{
-    r.onclick=()=>{
-      const k=r.dataset.kind;
-      const v=document.getElementById("val-"+k);
-      if(v.dataset.r)return;
-      if(k==="phone")v.innerHTML=`<a href="tel:${d.phoneTel}">${d.phonePretty}</a>`;
-      else if(k==="email")v.innerHTML=`<a href="mailto:${d.email}">${d.email}</a>`;
-      else v.textContent=d[k];
-      v.dataset.r=1;
-    };
+    const k=r.dataset.kind;
+    r.addEventListener("click",()=>reveal(k));
+    r.addEventListener("keydown",e=>{
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();reveal(k);}
+    });
   });
 </script>
 
