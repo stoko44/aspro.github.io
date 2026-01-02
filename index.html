@@ -1,374 +1,312 @@
 <!doctype html>
 <html lang="pl" translate="no">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ASPRO Projekty i Nadzory Drogowe — Adrian Stokowski</title>
-  <meta name="description" content="ASPRO Projekty i Nadzory Drogowe — Adrian Stokowski." />
-  <meta name="theme-color" content="#284078" />
+<title>ASPRO Projekty i Nadzory Drogowe – Adrian Stokowski</title>
 
-  <meta http-equiv="content-language" content="pl" />
-  <meta name="google" content="notranslate" />
-  <meta name="translate" content="no" />
+<meta name="description" content="ASPRO Projekty i Nadzory Drogowe – Adrian Stokowski. Projekty drogowe i nadzory inwestorskie.">
+<meta name="google" content="notranslate">
+<meta http-equiv="content-language" content="pl">
 
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="favicon-180.png" />
+<link rel="icon" href="favicon.ico">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --accent:#0028B8;
-      --bg:#070b14;
-      --text:rgba(255,255,255,0.92);
-      --muted:rgba(255,255,255,0.72);
-      --muted2:rgba(255,255,255,0.58);
-      --line:rgba(255,255,255,0.12);
-      --shadow:0 18px 45px rgba(0,0,0,0.45);
-      --radius:22px;
-    }
+<style>
+:root{
+  --bg:#0b1222;
+  --card:#111a2f;
+  --line:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.65);
+  --accent:#2c4fb8;
+  --radius:22px;
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      color:var(--text);
-      font:16px/1.55 "Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(900px 500px at 15% 10%, rgba(0,40,184,.22), transparent 55%),
-        radial-gradient(900px 500px at 85% 30%, rgba(40,64,120,.40), transparent 60%),
-        radial-gradient(900px 600px at 50% 100%, rgba(255,255,255,.06), transparent 55%),
-        linear-gradient(180deg,#050712,var(--bg));
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Montserrat,system-ui,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(44,79,184,.25), transparent 55%),
+    radial-gradient(900px 500px at 85% 30%, rgba(44,79,184,.18), transparent 60%),
+    linear-gradient(180deg,#050814,var(--bg));
+  display:flex;
+  justify-content:center;
+  padding:28px 18px;
+}
 
-    .wrap{
-      min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px 18px;
-    }
+.card{
+  width:100%;
+  max-width:1100px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  overflow:hidden;
+}
 
-    .card{
-      width:min(1020px,100%);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.05));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
+/* ===== HEADER ===== */
+header{
+  padding:28px 32px;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(135deg,rgba(44,79,184,.35),transparent 55%),
+    linear-gradient(225deg,rgba(17,26,47,.9),transparent 60%);
+}
 
-    .topbar{
-      padding:26px;
-      display:flex;
-      gap:22px;
-      align-items:center;
-      border-bottom:1px solid var(--line);
-      background:
-        linear-gradient(135deg,rgba(0,40,184,.18),transparent 55%),
-        linear-gradient(225deg,rgba(40,64,120,.30),transparent 45%);
-    }
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
 
-    .logo{
-      width:72px;
-      height:72px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.05);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      flex:0 0 auto;
-    }
-    .logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      padding:8px;
-      display:block;
-    }
+.logo img{
+  height:78px;
+  width:auto;
+  display:block;
+}
 
-    .brandText{display:flex;flex-direction:column;gap:6px;min-width:0}
+.header-text{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
 
-    .aspro{
-      margin:0;
-      font-size:46px;
-      letter-spacing:.10em;
-      font-weight:300;
-      text-transform:uppercase;
-      line-height:1;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
+.header-text .line1{
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
 
-    .tagline{
-      margin:0;
-      font-size:16px;
-      letter-spacing:.12em;
-      font-weight:600;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.86);
-    }
+.header-text .line2{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 
-    .owner{
-      margin:0;
-      font-size:14px;
-      letter-spacing:.12em;
-      font-weight:600;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.82);
-    }
+/* ===== CONTENT ===== */
+main{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+  padding:26px 28px;
+}
 
-    .content{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-      padding:22px 24px 26px;
-    }
+@media(max-width:900px){
+  main{grid-template-columns:1fr}
+  .logo img{height:64px}
+}
 
-    @media(max-width:860px){
-      .content{grid-template-columns:1fr}
-      .aspro{font-size:36px}
-      .logo{width:64px;height:64px}
-    }
+/* ===== PANELS ===== */
+.panel{
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+}
 
-    .panel{
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(255,255,255,.05);
-      padding:18px;
-    }
+.panel h2{
+  margin:0 0 16px;
+  font-size:18px;
+}
 
-    .panel h2{
-      margin:0 0 12px;
-      font-size:16px;
-      font-weight:700;
-    }
+/* ===== ABOUT ===== */
+.about{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-bottom:22px;
+}
 
-    .about{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.65;
-    }
+/* ===== SERVICES ===== */
+.service{
+  padding:14px 0;
+  border-bottom:1px dashed rgba(255,255,255,.15);
+}
 
-    .services{display:grid;gap:12px}
+.service:last-child{border-bottom:none}
 
-    .service{
-      display:flex;
-      gap:12px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-    }
+.service-title{
+  font-weight:700;
+  font-size:15px;
+}
 
-    .dot{
-      width:10px;height:10px;border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 4px rgba(0,40,184,.16);
-      margin-top:6px;
-      flex:0 0 auto;
-    }
+.service-desc{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:6px;
+}
 
-    .serviceText{min-width:0}
-    .serviceTitle{
-      font-weight:700;
-      font-size:15px;
-      margin:0;
-      line-height:1.2;
-    }
-    .serviceDesc{
-      margin:6px 0 0;
-      font-size:13px;
-      color:var(--muted2);
-      line-height:1.55;
-    }
+/* ===== CONTACT ===== */
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  margin-bottom:12px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+}
 
-    .info{display:grid;gap:12px}
+.icon{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  background:rgba(44,79,184,.18);
+  display:grid;
+  place-items:center;
+}
 
-    .row{
-      display:flex;
-      gap:12px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      cursor:pointer;
-      user-select:none;
-    }
+.icon svg{width:18px;height:18px;fill:#fff}
 
-    .row:hover{background:rgba(255,255,255,.06)}
+.label{
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 
-    .ico{
-      width:38px;height:38px;
-      border-radius:14px;
-      display:grid;place-items:center;
-      background:rgba(0,40,184,.14);
-      border:1px solid rgba(0,40,184,.22);
-      flex:0 0 auto;
-    }
+.value{
+  font-weight:700;
+}
 
-    .k{
-      font-size:12px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:var(--muted2);
-      font-weight:700;
-      margin-bottom:2px;
-    }
-
-    .v{
-      font-size:16px;
-      font-weight:800;
-      line-height:1.25;
-    }
-
-    .ico svg{width:18px;height:18px;fill:#fff}
-
-    footer{
-      padding:14px 24px 18px;
-      border-top:1px solid var(--line);
-      font-size:12px;
-      color:var(--muted2);
-      display:flex;
-      justify-content:flex-end;
-    }
-  </style>
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid var(--line);
+  padding:14px 28px;
+  font-size:12px;
+  color:var(--muted);
+  display:flex;
+  justify-content:flex-end;
+}
+</style>
 </head>
 
 <body>
-<div class="wrap">
-<main class="card">
 
-<header class="topbar">
-  <div class="logo"><img src="logo.png" alt="ASPRO logo"></div>
-  <div class="brandText">
-    <h1 class="aspro">ASPRO</h1>
-    <p class="tagline">PROJEKTY I NADZORY DROGOWE</p>
-    <p class="owner">ADRIAN STOKOWSKI</p>
+<div class="card">
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="ASPRO_logo_transparent_HQ.png" alt="ASPRO Projekty i Nadzory Drogowe">
+    </div>
+    <div class="header-text">
+      <div class="line1">Projekty i Nadzory Drogowe</div>
+      <div class="line2">Adrian Stokowski</div>
+    </div>
   </div>
 </header>
 
-<section class="content">
+<main>
 
-  <div class="panel">
-    <h2>O firmie</h2>
-    <p class="about">
-      Biuro inżynierskie specjalizujące się w projektowaniu oraz nadzorze inwestycji drogowych.
-      Stawiamy na czytelną dokumentację, sprawną współpracę i dopracowane rozwiązania techniczne.
-    </p>
+<section class="panel">
+  <h2>O firmie</h2>
+  <div class="about">
+    Biuro inżynierskie specjalizujące się w projektowaniu oraz nadzorze inwestycji drogowych.
+    Stawiamy na czytelną dokumentację, sprawną współpracę i dopracowane rozwiązania techniczne.
+  </div>
 
-    <h2>Zakres usług</h2>
-    <div class="services">
-      <div class="service">
-        <div class="dot"></div>
-        <div class="serviceText">
-          <p class="serviceTitle">Projekty drogowe</p>
-          <p class="serviceDesc">opracowania koncepcyjne i projektowe, dokumentacje techniczne</p>
-        </div>
-      </div>
+  <h2>Zakres usług</h2>
 
-      <div class="service">
-        <div class="dot"></div>
-        <div class="serviceText">
-          <p class="serviceTitle">Nadzory</p>
-          <p class="serviceDesc">nadzór inwestorski i autorski, wsparcie na etapie realizacji</p>
-        </div>
-      </div>
+  <div class="service">
+    <div class="service-title">Projekty drogowe</div>
+    <div class="service-desc">
+      opracowania koncepcyjne i projektowe, dokumentacje techniczne
     </div>
   </div>
 
-  <aside class="panel">
-    <h2>Kontakt</h2>
-
-    <div class="info">
-      <div class="row js-reveal" data-kind="address" tabindex="0" role="button" aria-label="Pokaż adres">
-        <div class="ico">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
-        </div>
-        <div>
-          <div class="k">Adres</div>
-          <div class="v" id="val-address">Kliknij, aby wyświetlić</div>
-        </div>
-      </div>
-
-      <div class="row js-reveal" data-kind="phone" tabindex="0" role="button" aria-label="Pokaż telefon">
-        <div class="ico">
-          <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
-        </div>
-        <div>
-          <div class="k">Telefon</div>
-          <div class="v" id="val-phone">Kliknij, aby wyświetlić</div>
-        </div>
-      </div>
-
-      <div class="row js-reveal" data-kind="email" tabindex="0" role="button" aria-label="Pokaż e-mail">
-        <div class="ico">
-          <svg viewBox="0 0 24 24"><path d="M20 6H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zm0 2-8 5-8-5"/></svg>
-        </div>
-        <div>
-          <div class="k">E-mail</div>
-          <div class="v" id="val-email">Kliknij, aby wyświetlić</div>
-        </div>
-      </div>
-
-      <div class="row js-reveal" data-kind="nip" tabindex="0" role="button" aria-label="Pokaż NIP">
-        <div class="ico">
-          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-        </div>
-        <div>
-          <div class="k">NIP</div>
-          <div class="v" id="val-nip">Kliknij, aby wyświetlić</div>
-        </div>
-      </div>
+  <div class="service">
+    <div class="service-title">Nadzory</div>
+    <div class="service-desc">
+      nadzór inwestorski i autorski, wsparcie na etapie realizacji
     </div>
-  </aside>
-
+  </div>
 </section>
 
-<footer>© <span id="y"></span> ASPRO</footer>
+<aside class="panel">
+  <h2>Kontakt</h2>
+
+  <div class="contact-item js" data-k="address">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
+    </div>
+    <div>
+      <div class="label">Adres</div>
+      <div class="value" id="address">Kliknij, aby wyświetlić</div>
+    </div>
+  </div>
+
+  <div class="contact-item js" data-k="phone">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
+    </div>
+    <div>
+      <div class="label">Telefon</div>
+      <div class="value" id="phone">Kliknij, aby wyświetlić</div>
+    </div>
+  </div>
+
+  <div class="contact-item js" data-k="email">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg>
+    </div>
+    <div>
+      <div class="label">E-mail</div>
+      <div class="value" id="email">Kliknij, aby wyświetlić</div>
+    </div>
+  </div>
+
+  <div class="contact-item js" data-k="nip">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+    </div>
+    <div>
+      <div class="label">NIP</div>
+      <div class="value" id="nip">Kliknij, aby wyświetlić</div>
+    </div>
+  </div>
+
+</aside>
 
 </main>
+
+<footer>© <span id="year"></span> ASPRO</footer>
+
 </div>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  const d={
-    address:"ul. Boryszewska 44/19, 09-410 Płock",
-    phonePretty:"880 510 126",
-    phoneTel:"+48880510126",
-    email:"kontakt.aspro@gmail.com",
-    nip:"8341755695"
-  };
+const data = {
+  address:"ul. Boryszewska 44/19, 09-410 Płock",
+  phone:"+48 880 510 126",
+  email:"kontakt.aspro@gmail.com",
+  nip:"8341755695"
+};
 
-  function reveal(kind){
-    const v=document.getElementById("val-"+kind);
-    if(!v || v.dataset.r) return;
-
-    if(kind==="phone") v.innerHTML = `<a href="tel:${d.phoneTel}">${d.phonePretty}</a>`;
-    else if(kind==="email") v.innerHTML = `<a href="mailto:${d.email}">${d.email}</a>`;
-    else v.textContent = d[kind];
-
-    v.dataset.r="1";
+document.querySelectorAll(".js").forEach(el=>{
+  el.onclick=()=>{
+    const k=el.dataset.k;
+    const v=document.getElementById(k);
+    if(v.dataset.shown)return;
+    v.textContent=data[k];
+    v.dataset.shown=1;
   }
-
-  document.querySelectorAll(".js-reveal").forEach(el=>{
-    const kind=el.dataset.kind;
-    el.addEventListener("click",()=>reveal(kind));
-    el.addEventListener("keydown",(e)=>{
-      if(e.key==="Enter" || e.key===" "){
-        e.preventDefault();
-        reveal(kind);
-      }
-    });
-  });
+});
 </script>
 
 </body>
