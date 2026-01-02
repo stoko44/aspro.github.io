@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>ASPRO Projekty i Nadzory Drogowe – Adrian Stokowski</title>
-
-<meta name="description" content="ASPRO Projekty i Nadzory Drogowe – Adrian Stokowski. Projekty drogowe i nadzory inwestorskie.">
+<meta name="description" content="ASPRO Projekty i Nadzory Drogowe – projekty drogowe i nadzory inwestorskie.">
 <meta name="google" content="notranslate">
 <meta http-equiv="content-language" content="pl">
 
@@ -55,44 +54,17 @@ body{
 
 /* ===== HEADER ===== */
 header{
-  padding:28px 32px;
+  padding:24px 32px;
   border-bottom:1px solid var(--line);
   background:
     linear-gradient(135deg,rgba(44,79,184,.35),transparent 55%),
     linear-gradient(225deg,rgba(17,26,47,.9),transparent 60%);
 }
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
 .logo img{
-  height:78px;
+  height:80px;        /* było ~70 */
   width:auto;
   display:block;
-}
-
-.header-text{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.header-text .line1{
-  font-size:18px;
-  font-weight:600;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.header-text .line2{
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--muted);
 }
 
 /* ===== CONTENT ===== */
@@ -134,14 +106,12 @@ main{
   padding:14px 0;
   border-bottom:1px dashed rgba(255,255,255,.15);
 }
-
 .service:last-child{border-bottom:none}
 
 .service-title{
   font-weight:700;
   font-size:15px;
 }
-
 .service-desc{
   font-size:13px;
   color:var(--muted);
@@ -169,7 +139,6 @@ main{
   display:grid;
   place-items:center;
 }
-
 .icon svg{width:18px;height:18px;fill:#fff}
 
 .label{
@@ -178,7 +147,6 @@ main{
   text-transform:uppercase;
   color:var(--muted);
 }
-
 .value{
   font-weight:700;
 }
@@ -186,7 +154,7 @@ main{
 /* ===== FOOTER ===== */
 footer{
   border-top:1px solid var(--line);
-  padding:14px 28px;
+  padding:10px 24px;
   font-size:12px;
   color:var(--muted);
   display:flex;
@@ -196,18 +164,12 @@ footer{
 </head>
 
 <body>
-
 <div class="card">
 
 <header>
-  <div class="header-inner">
-    <div class="logo">
-      <img src="ASPRO_logo_transparent_HQ.png" alt="ASPRO Projekty i Nadzory Drogowe">
-    </div>
-    <div class="header-text">
-      <div class="line1">Projekty i Nadzory Drogowe</div>
-      <div class="line2">Adrian Stokowski</div>
-    </div>
+  <div class="logo">
+    <img src="ASPRO_logo_transparent_HQ.png"
+         alt="ASPRO Projekty i Nadzory Drogowe Adrian Stokowski">
   </div>
 </header>
 
@@ -241,71 +203,48 @@ footer{
   <h2>Kontakt</h2>
 
   <div class="contact-item js" data-k="address">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
-    </div>
-    <div>
-      <div class="label">Adres</div>
-      <div class="value" id="address">Kliknij, aby wyświetlić</div>
-    </div>
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div>
+    <div><div class="label">Adres</div><div class="value" id="address">Kliknij, aby wyświetlić</div></div>
   </div>
 
   <div class="contact-item js" data-k="phone">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
-    </div>
-    <div>
-      <div class="label">Telefon</div>
-      <div class="value" id="phone">Kliknij, aby wyświetlić</div>
-    </div>
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg></div>
+    <div><div class="label">Telefon</div><div class="value" id="phone">Kliknij, aby wyświetlić</div></div>
   </div>
 
   <div class="contact-item js" data-k="email">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg>
-    </div>
-    <div>
-      <div class="label">E-mail</div>
-      <div class="value" id="email">Kliknij, aby wyświetlić</div>
-    </div>
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg></div>
+    <div><div class="label">E-mail</div><div class="value" id="email">Kliknij, aby wyświetlić</div></div>
   </div>
 
   <div class="contact-item js" data-k="nip">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-    </div>
-    <div>
-      <div class="label">NIP</div>
-      <div class="value" id="nip">Kliknij, aby wyświetlić</div>
-    </div>
+    <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+    <div><div class="label">NIP</div><div class="value" id="nip">Kliknij, aby wyświetlić</div></div>
   </div>
-
 </aside>
 
 </main>
 
-<footer>© <span id="year"></span> ASPRO</footer>
+<footer>© <span id="y"></span> ASPRO</footer>
 
 </div>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const data = {
-  address:"ul. Boryszewska 44/19, 09-410 Płock",
-  phone:"+48 880 510 126",
-  email:"kontakt.aspro@gmail.com",
-  nip:"8341755695"
+document.getElementById("y").textContent=new Date().getFullYear();
+const d={
+ address:"ul. Boryszewska 44/19, 09-410 Płock",
+ phone:"+48 880 510 126",
+ email:"kontakt.aspro@gmail.com",
+ nip:"8341755695"
 };
-
-document.querySelectorAll(".js").forEach(el=>{
-  el.onclick=()=>{
-    const k=el.dataset.k;
-    const v=document.getElementById(k);
-    if(v.dataset.shown)return;
-    v.textContent=data[k];
-    v.dataset.shown=1;
-  }
+document.querySelectorAll(".js").forEach(e=>{
+ e.onclick=()=>{
+  const k=e.dataset.k;
+  const v=document.getElementById(k);
+  if(v.dataset.s)return;
+  v.textContent=d[k];
+  v.dataset.s=1;
+ };
 });
 </script>
 
