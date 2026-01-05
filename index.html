@@ -152,6 +152,15 @@ main{
   font-weight:700;
 }
 
+/* obrazki z danymi (zamiast tekstu) */
+.value-img{
+  display:none;
+  margin-top:6px;
+  height:22px;       /* pasuje do typografii “value” */
+  width:auto;
+  max-width:520px;
+}
+
 /* ===== FOOTER (jak na screenie: małe, w prawym dolnym rogu) ===== */
 footer{
   position:absolute;
@@ -206,24 +215,40 @@ footer{
 <aside class="panel">
   <h2>Kontakt</h2>
 
-  <div class="contact-item js" data-k="address">
+  <div class="contact-item js" data-img="contact-address.png">
     <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div>
-    <div><div class="label">Adres</div><div class="value" id="address">Kliknij, aby wyświetlić</div></div>
+    <div>
+      <div class="label">Adres</div>
+      <div class="value value-hint">Kliknij, aby wyświetlić</div>
+      <img class="value-img" alt="Adres">
+    </div>
   </div>
 
-  <div class="contact-item js" data-k="phone">
+  <div class="contact-item js" data-img="contact-phone.png">
     <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg></div>
-    <div><div class="label">Telefon</div><div class="value" id="phone">Kliknij, aby wyświetlić</div></div>
+    <div>
+      <div class="label">Telefon</div>
+      <div class="value value-hint">Kliknij, aby wyświetlić</div>
+      <img class="value-img" alt="Telefon">
+    </div>
   </div>
 
-  <div class="contact-item js" data-k="email">
+  <div class="contact-item js" data-img="contact-email.png">
     <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg></div>
-    <div><div class="label">E-mail</div><div class="value" id="email">Kliknij, aby wyświetlić</div></div>
+    <div>
+      <div class="label">E-mail</div>
+      <div class="value value-hint">Kliknij, aby wyświetlić</div>
+      <img class="value-img" alt="E-mail">
+    </div>
   </div>
 
-  <div class="contact-item js" data-k="nip">
+  <div class="contact-item js" data-img="contact-nip.png">
     <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-    <div><div class="label">NIP</div><div class="value" id="nip">Kliknij, aby wyświetlić</div></div>
+    <div>
+      <div class="label">NIP</div>
+      <div class="value value-hint">Kliknij, aby wyświetlić</div>
+      <img class="value-img" alt="NIP">
+    </div>
   </div>
 </aside>
 
@@ -236,21 +261,21 @@ footer{
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const d = {
-  address:"ul. Boryszewska 44/19, 09-410 Płock",
-  phone:"+48 880 510 126",
-  email:"kontakt.aspro@gmail.com",
-  nip:"8341755695"
-};
+/* Bez danych wrażliwych w HTML/JS — tylko podmiana “Kliknij…” -> obrazek */
+document.querySelectorAll(".js").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    if (el.dataset.s) return;
 
-document.querySelectorAll(".js").forEach(e=>{
-  e.onclick=()=>{
-    const k=e.dataset.k;
-    const v=document.getElementById(k);
-    if(v.dataset.s) return;
-    v.textContent=d[k];
-    v.dataset.s=1;
-  };
+    const hint = el.querySelector(".value-hint");
+    const img  = el.querySelector(".value-img");
+    const src  = el.dataset.img;
+
+    hint.style.display = "none";
+    img.src = src;
+    img.style.display = "block";
+
+    el.dataset.s = "1";
+  });
 });
 </script>
 
