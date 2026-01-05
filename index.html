@@ -52,7 +52,7 @@ body{
   position:relative;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   padding:22px 32px;
   border-bottom:1px solid var(--line);
@@ -60,41 +60,30 @@ header{
     linear-gradient(135deg,rgba(44,79,184,.35),transparent 55%),
     linear-gradient(225deg,rgba(17,26,47,.9),transparent 60%);
 }
+.logo img{height:118px}
 
-.logo img{
-  height:118px;
-  width:auto;
-  display:block;
-}
-
-/* ===== CONTENT ===== */
+/* CONTENT */
 main{
   display:grid;
   grid-template-columns:1.15fr .85fr;
   gap:22px;
   padding:26px 28px 70px;
 }
-
 @media(max-width:900px){
-  main{grid-template-columns:1fr; padding:22px 18px 60px;}
-  header{padding:18px 18px;}
-  .logo img{height:88px;}
+  main{grid-template-columns:1fr;padding:22px 18px 60px}
+  .logo img{height:88px}
 }
 
-/* ===== PANELS ===== */
+/* PANELS */
 .panel{
   background:rgba(255,255,255,.05);
   border:1px solid var(--line);
   border-radius:18px;
   padding:22px;
 }
+.panel h2{margin:0 0 16px;font-size:18px}
 
-.panel h2{
-  margin:0 0 16px;
-  font-size:18px;
-}
-
-/* ===== ABOUT ===== */
+/* ABOUT */
 .about{
   font-size:15px;
   line-height:1.6;
@@ -102,42 +91,28 @@ main{
   margin-bottom:22px;
 }
 
-/* ===== SERVICES ===== */
-.service{
-  padding:14px 0;
-  border-bottom:1px dashed rgba(255,255,255,.15);
-}
+/* SERVICES */
+.service{padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.15)}
 .service:last-child{border-bottom:none}
+.service-title{font-weight:700}
+.service-desc{font-size:13px;color:var(--muted);margin-top:6px}
 
-.service-title{
-  font-weight:700;
-  font-size:15px;
-}
-.service-desc{
-  font-size:13px;
-  color:var(--muted);
-  margin-top:6px;
-}
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact-item{
   display:flex;
-  align-items:center;
   gap:14px;
   padding:14px 16px;
   margin-bottom:12px;
   border-radius:16px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.04);
+  cursor:pointer;
 }
 
 .icon{
-  width:36px;
-  height:36px;
-  border-radius:12px;
+  width:36px;height:36px;border-radius:12px;
   background:rgba(44,79,184,.18);
-  display:grid;
-  place-items:center;
+  display:grid;place-items:center;
 }
 .icon svg{width:18px;height:18px;fill:#fff}
 
@@ -147,25 +122,23 @@ main{
   text-transform:uppercase;
   color:var(--muted);
 }
-
-.value-img{
+.value{
+  font-weight:700;
   margin-top:6px;
-  height:20px;   /* ⬅️ JEDYNA ZMIANA – wyrównanie wielkości */
-  width:auto;
-  max-width:520px;
 }
 
-/* ===== FOOTER ===== */
+.value img{
+  height:20px;
+  width:auto;
+}
+
+/* FOOTER */
 footer{
   position:absolute;
   right:28px;
   bottom:18px;
   font-size:12px;
   color:var(--muted);
-  letter-spacing:.02em;
-}
-@media(max-width:900px){
-  footer{right:18px; bottom:14px;}
 }
 </style>
 </head>
@@ -175,8 +148,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="ASPRO_logo_transparent_HQ.png"
-         alt="ASPRO Projekty i Nadzory Drogowe Adrian Stokowski">
+    <img src="ASPRO_logo_transparent_HQ.png" alt="ASPRO">
   </div>
 </header>
 
@@ -190,74 +162,58 @@ footer{
   </div>
 
   <h2>Zakres usług</h2>
-
   <div class="service">
     <div class="service-title">Projekty drogowe</div>
-    <div class="service-desc">
-      opracowania koncepcyjne i projektowe, dokumentacje techniczne
-    </div>
+    <div class="service-desc">opracowania koncepcyjne i projektowe, dokumentacje techniczne</div>
   </div>
-
   <div class="service">
     <div class="service-title">Nadzory</div>
-    <div class="service-desc">
-      nadzór inwestorski i autorski, wsparcie na etapie realizacji
-    </div>
+    <div class="service-desc">nadzór inwestorski i autorski, wsparcie na etapie realizacji</div>
   </div>
 </section>
 
 <aside class="panel">
   <h2>Kontakt</h2>
 
-  <div class="contact-item">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
-    </div>
-    <div>
-      <div class="label">Adres</div>
-      <img class="value-img" src="contact-address.png" alt="Adres">
-    </div>
+  <div class="contact-item" data-img="contact-address.png">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div>
+    <div><div class="label">Adres</div><div class="value">Kliknij, aby wyświetlić</div></div>
   </div>
 
-  <div class="contact-item">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg>
-    </div>
-    <div>
-      <div class="label">Telefon</div>
-      <img class="value-img" src="contact-phone.png" alt="Telefon">
-    </div>
+  <div class="contact-item" data-img="contact-phone.png">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 10a14 14 0 008 8l2-2c.3-.3.7-.4 1-.2a11 11 0 003 .5V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h4.5a11 11 0 00.5 3c.1.3 0 .7-.2 1l-2 2z"/></svg></div>
+    <div><div class="label">Telefon</div><div class="value">Kliknij, aby wyświetlić</div></div>
   </div>
 
-  <div class="contact-item">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg>
-    </div>
-    <div>
-      <div class="label">E-mail</div>
-      <img class="value-img" src="contact-email.png" alt="E-mail">
-    </div>
+  <div class="contact-item" data-img="contact-email.png">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6zm0 4-8 5-8-5"/></svg></div>
+    <div><div class="label">E-mail</div><div class="value">Kliknij, aby wyświetlić</div></div>
   </div>
 
-  <div class="contact-item">
-    <div class="icon">
-      <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-    </div>
-    <div>
-      <div class="label">NIP</div>
-      <img class="value-img" src="contact-nip.png" alt="NIP">
-    </div>
+  <div class="contact-item" data-img="contact-nip.png">
+    <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+    <div><div class="label">NIP</div><div class="value">Kliknij, aby wyświetlić</div></div>
   </div>
 </aside>
 
 </main>
 
 <footer>© <span id="y"></span> ASPRO</footer>
-
 </div>
 
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
+
+document.querySelectorAll(".contact-item").forEach(item=>{
+  item.addEventListener("click",()=>{
+    if(item.dataset.done) return;
+    const img=document.createElement("img");
+    img.src=item.dataset.img;
+    item.querySelector(".value").textContent="";
+    item.querySelector(".value").appendChild(img);
+    item.dataset.done=1;
+  });
+});
 </script>
 
 </body>
